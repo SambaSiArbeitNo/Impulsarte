@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Impulsarte</title>
+        <link rel="stylesheet" href="../css/styles.css">
+        <link rel="stylesheet" href="../css/fonts.css">
+    </head>
+    <body>
+        <div class="main_container">
+            <div class="nav_container">
+                <div class="isologo_container">
+                    <img src="../images/impulsarte_isotipo.png">
+                </div>
+                
+                <ul class="nav_items">
+                    <li class="logotipo_container"><img src="../images/Impulsarte_logotipo.png" alt="Impulsarte_logotipo"></li>
+                    <li class="hideOnMobile"><a href="#contact">Contacto</a></li>
+                    <li class="hideOnMobile"><a href="#about">About</a></li>
+                    <li class="hideOnMobile"><a href="#services">Servicios</a></li>
+                    <li class="menu_button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
+                </ul>
+                
+                <ul class="sidebar">
+                    
+                    <li class="firstRowSidebar">
+                        <div class="isologo_container">
+                            <img src="../images/impulsarte_isotipo.png">
+                        </div>
+                        <div class="closeButton_container" onclick=hideSidebar()>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                        </div>
+                    </li>
+                    <li><a href="#contact">Contacto</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#services">Servicios</a></li>
+                </ul>
+            </div>
+            <div class="hero_container">
+                <h2>IMPULSARTE</h2>
+                <h3>Impulsamos la administración y digitalización de negocios, respaldados por una amplia experiencia de trabajo acompañando emprendimientos locales, regionales y empresas multinacionales.</h3>
+            </div>
+        </div>
+        <div class="cardbar">
+            <div  class="card">
+                <div class="card_icon design_card">
+                    <img src="../icons/graphic_design.png" alt="graphic_desing_icon">
+                </div>
+                <div class="card_text_container">
+                    <h2>Diseño de Marca</h2>
+                </div>
+            </div>
+
+            <div class="card admin_card">
+                <div class="card_icon">
+                    <img src="../icons/administracion_icon.png" alt="administracion_icon">
+                </div>
+                <h2>Administracion y Gestion</h2>
+                </div>
+
+            <div class="card">
+                <div class="card_icon dev_card">
+                    <img src="../icons/desarrollo_web_icon.png" alt="desarrollo_web_icon">
+                </div>
+                <h2>Desarrollo Web</h2>
+            </div>
+        </div>
+        <div class="about_container">
+            <a id="about"></a>
+            <div class="aboutCard">
+                <h2>¿Quiénes somos?</h2>
+                <h3>Somos un Equipo de Asesoría Integral. 
+Brindamos soluciones eficientes en administración, gestión y resolución de problemáticas organizacionales. Acompañamos a las organizaciones a afrontar desafíos en distintos contextos y etapas de su crecimiento, sin importar el tamaño de la empresa ni el rubro en el que operen.
+Nos caracterizamos por actuar con estricta confidencialidad, por el resguardo de las ideas y estrategias de negocio de nuestros clientes.
+</h3>
+            </div>
+            <div class="aboutCard" >
+                
+                <h2>¿Qué servicios ofrecemos?</h2>
+                <ul>
+                    <li>Optimización de Recursos</li>
+                    <li>Asesoramiento Integral para: Grandes, Medianas y Pequeñas Empresas</li>
+                    <li>Desarrollo de APPS y Desarrollo de Software</li>
+                    <li>Digitalización de Negocios</li>
+                    <li>Reingeniería de Procesos</li>
+                    <li>RRHH: Reclutamiento de Personal y Formaciones  de Equipos</li>
+                    <li>Dirección y Producción de Eventos Empresariales</li>
+                </ul>
+            </div>
+        </div>
+        <div class="serviceCards_container" >
+            <a id="services"></a>
+            <ul>
+                <li class="pinkcard">Definición del propósito y la esencia de la marca.</li>
+                <li>Análisis del público objetivo y del mercado al que se dirige el negocio.</li>
+                <li>Identificación del perfil de cliente ideal.</li>
+                <li>Desarrollo del concepto e identidad de marca.</li>
+                <li>Creación del nombre comercial (naming) si el proyecto lo requiere.</li>
+                <li>Diseño de la identidad visual del negocio (logo, colores, tipografía y estilo gráfico).</li>
+                <li>Construcción de una imagen de marca coherente con los valores y objetivos del negocio.</li>
+                <li>Definición del posicionamiento de la marca en el mercado.</li>
+                <li>Desarrollo de lineamientos para la comunicación y presencia de la marca.</li>
+                <li>Análisis de tendencias sociales aplicadas a la empresa.</li>
+            </ul>
+            <ul>
+                <li>Gestión y administración de cartera de clientes.</li>
+                <li>Asesoramiento y gestión de habilitaciones comerciales.</li>
+                <li>Análisis y reingeniería de procesos organizacionales.</li>
+                <li>Organización y optimización de espacios de trabajo, archivos y recursos físicos y digitales.</li>
+                <li>Gestión de la comunicación interna y externa de la organización.</li>
+                <li>Implementación y soporte de soluciones tecnológicas e informáticas.</li>
+                <li>Planificación, dirección y producción de eventos corporativos.</li>
+                <li>Optimización y gestión eficiente de recursos organizacionales.</li>
+                <li>Reclutamiento y selección de recursos humanos.</li>
+                <li>Diseño e implementación de programas de capacitación para el personal.</li>
+            </ul>
+            <ul>
+                <li>Transformación digital y adopción de nuevas tecnologías.</li>
+                <li>Desarrollo web (sitios institucionales, plataformas y aplicaciones web).</li>
+                <li>Gestión y administración de redes sociales.</li>
+                <li>Planificación de métodos y herramientas de pago para comercios.</li>
+                <li>Estrategias digitales y posicionamiento en redes sociales.</li>
+                <li>Desarrollo de sistemas de gestión a medida para organizaciones.</li>
+                <li>Automatización de procesos administrativos y operativos.</li>
+                <li>Integración de plataformas y sistemas digitales (ERP, CRM, e-commerce, etc.).</li>
+                <li>Análisis de datos y generación de reportes para la toma de decisiones.</li>
+                <li>Implementación y mantenimiento de soluciones tecnológicas y soporte técnico.</li>
+            </ul>
+        </div>
+        <div class="contact_container">
+        <a id="contact"></a>
+            <ul>
+                <li>Whatsapp</li>
+                <li>Instagram</li>
+                <li>Telefono</li>
+                <li>Direccion</li>
+            </ul>
+        </div>
+        <script>
+            function toggleDesignButton (){
+                const pinkcard = document.querySelector('.pinkcard')
+                if(pinkcard.style.backgroundColor === '#808080')
+                {
+                    pinkcard.style.backgroundColor = '#E92C93'
+                }
+                else if (pinkcard.style.backgroundColor === '#E92C93')
+                {
+                    pinkcard.style.backgroundColor = '#808080'
+                }
+            }
+            function showSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'flex'
+            }
+            function hideSidebar(){
+                const sidebar = document.querySelector('.sidebar')
+                sidebar.style.display = 'none'
+            }
+        </script>
+    </body>
+</html>

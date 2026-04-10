@@ -1,0 +1,328 @@
+
+body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    background-image: url(../images/fondo_body.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: "Montserrat";
+}
+.hero_container{
+    height: 100%;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    user-select: none;
+}
+.main_container{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    height: 600px;
+    backdrop-filter: blur(5px);
+}
+.cardbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    width: 100%;
+    padding: 20px;
+}
+
+.card{
+    height: auto;
+    display: flex;
+    box-sizing: border-box;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    width: 300px;
+    background-color: white;
+    margin: 0 10px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    border-radius: 30px;
+    text-align: center;
+    position: relative;
+    border-width: 10px 10px 10px 10px;
+    border-color: black;
+    user-select: none;
+}
+
+
+.card_icon{
+    width: 100px;
+    height: 100px;
+    object-fit: contain;
+}
+.card_icon img{
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.about_container{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    background-color: white;
+    
+}
+
+.aboutCard{
+    margin: 10px;
+    height: 300px;
+    padding: 1rem;
+    width: 50%;
+    background-color: gray;
+    border-radius: 30px;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+}
+.aboutCard h3{
+    font-weight: 400;
+}
+
+.serviceCards_container {
+    height: 1100px;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+}
+
+.serviceCards_container ul {
+    list-style: none;
+}
+.serviceCards_container li {
+    margin: 5px;
+    height: 80px;
+    padding: 10px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.serviceCards_container li:hover {
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+    background-color: #E92C93;
+}
+
+.bluecard{
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+    background-color: #2929be;
+}
+.pinkcard{
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+    background-color: gray;
+}
+.whitecard{
+    transform: translateY(-10px) scale(1.01);
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
+    background-color: gray;
+}
+
+.contact_container{
+    height: 100px;
+    width: 100%;
+    background-color: #E92C93;
+    color: white;
+}
+.contact_container ul{
+    margin: 0;
+    padding: 10px;
+    list-style: none;
+}
+
+.nav_container {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+    background-color: rgba(0, 0, 0, 0.25);
+}
+
+.isologo_container{
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: row;
+    height: 100px;
+    padding: 10px;
+}
+.logotipo_container{
+    height: 100%;
+    box-sizing: border-box;
+    padding: 20px;
+}
+
+.logotipo_container img{
+    height: 100%;
+    object-fit: contain;
+}
+.firstRowSidebar{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.firstRowSidebar div:first-child{
+    margin-right: auto;
+}
+
+.closeButton_container{
+    height: 100%;
+    width: 100px;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.closeButton_container svg{
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+.isologo_container img{
+    height: 100%;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+}
+
+.nav_container ul{
+    height: 100%;
+    margin: 0;
+    list-style: none;
+}
+.nav_items{
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    padding: 0 0 0 10px;
+}
+
+.nav_container li{
+    height: 100px;
+}
+.nav_items li:first-child{
+    margin-right: auto;
+}
+
+.sidebar li:first-child{
+    margin-right: 0;
+}
+
+
+.nav_container a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
+}
+
+.nav_container h1 {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+}
+.nav_container a:hover{
+    background-color: rgba(0,0,0,0.50)
+}
+.sidebar{
+    width: 300px;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    height: 100vh;
+    z-index: 999;
+    padding: 0 0 0 0;
+    box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(0, 0, 0, 0.25);
+    backdrop-filter: blur(10px);
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+.sidebar li{
+    width: 100%;
+}
+.menu_button{
+    display: none;
+}
+
+@media(max-width: 1024px){
+    .hideOnMobile{
+        display: none;
+    }
+    .menu_button{
+        display: block;
+    }
+    
+}
+
+@media(max-width: 600px){
+    .sidebar{
+        width: 100%;
+    }
+    .nav_container{
+        width: 100%;
+    }
+    .cardbar{
+        flex-direction: column;
+        align-items: center;
+    }
+    .card{
+        width: 100%;
+        margin-bottom: 20px;
+        flex-direction: row;
+        padding: 1.5rem;
+        justify-content: flex-start;
+    }
+    .card_icon{
+        align-self: flex-start;
+    }
+    .card h2{
+        padding: 0 0 0 20px;
+        width: 80%;
+        width: auto;
+        text-align: center;
+    }
+    .about_container{
+        flex-direction: column;
+        width: 100%;
+    }
+    .aboutCard{
+        margin: 20px;
+        width: 100%;
+    }
+}
+
+@keyframes spin{
+    from{
+        --angle: 0deg;
+    }
+    to{
+        --angle: 360deg;
+    }
+}
+
+@property --angle{
+    syntax: "<angle>";
+    initial-value: 0deg;
+    inherits: false;
+}
