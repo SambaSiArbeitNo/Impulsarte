@@ -83,7 +83,7 @@ body {
     height: 300px;
     padding: 1rem;
     width: 50%;
-    background-color: gray;
+    background-color: rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
 }
@@ -91,30 +91,83 @@ body {
     font-weight: 400;
 }
 
-.serviceCards_container {
-    height: 1100px;
+.seccionDisenio{
+    background-color: #2929be;
+    margin: 0;
+}
+.seccionGestion{
     background-color: white;
+    margin: 0;
+}
+.seccionDesarollo{
+    background-color: #2929be;
+    margin: 0;
+}
+.h2Services{
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+.serviceCardContainer {
+    display: flex;
+    overflow-x: auto;
+    height: 200px;
+}
+.serviceCardContainer:hover .wrapper{
+    animation-play-state: paused;
+}
+.serviceCardContainer::-webkit-scrollbar {
+    display: none;
+}
+.wrapper{
     display: flex;
     flex-direction: row;
 }
 
-.serviceCards_container ul {
-    list-style: none;
+.carouselRTL{
+    animation: carouselRTL 40s infinite linear;
 }
-.serviceCards_container li {
-    margin: 5px;
-    height: 80px;
-    padding: 10px;
+.carouselLTR{
+    animation: carouselLTR 40s infinite linear;
+}
+
+.serviceCard{
+    flex: 0 0 10em;
+    margin: 15px;
+    height: 100px;
+    padding: 20px;
+    text-align: left;
     border-radius: 30px;
     background-color: white;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
     transition: transform .2s ease, box-shadow .2s ease;
 }
 
-.serviceCards_container li:hover {
+@keyframes carouselRTL{
+    from {translate: 0%;}
+    to {translate: -100%;}
+}
+@keyframes carouselLTR{
+    from {translate: 0%;}
+    to {translate: 100%;}
+}
+
+.serviceCard {
+    flex: 0 0 10em;
+    margin: 15px;
+    height: 100px;
+    padding: 20px;
+    border-radius: 30px;
+    background-color: white;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.serviceCard:hover {
     transform: translateY(-10px) scale(1.01);
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
     background-color: #E92C93;
+    color: white;
 }
 
 .bluecard{
@@ -136,13 +189,17 @@ body {
 .contact_container{
     height: 100px;
     width: 100%;
-    background-color: #E92C93;
+    background-color: rgba(233, 44, 147, 1);
     color: white;
 }
 .contact_container ul{
     margin: 0;
     padding: 10px;
     list-style: none;
+}
+.contact_container a{
+    color: white;
+    text-decoration: none;
 }
 
 .nav_container {
@@ -160,14 +217,18 @@ body {
     height: 100px;
     padding: 10px;
 }
+
+
 .logotipo_container{
+    display: flex;
+    align-items: center;
     height: 100%;
     box-sizing: border-box;
-    padding: 20px;
+    padding: 10px 10px 20px 10px;
 }
 
 .logotipo_container img{
-    height: 100%;
+    height: 70%;
     object-fit: contain;
 }
 .firstRowSidebar{
@@ -309,6 +370,14 @@ body {
     .aboutCard{
         margin: 20px;
         width: 100%;
+    }
+
+    .isologo_container{
+        height: 70px;
+    }
+    .logotipo_container img{
+        height: 40%;
+        padding: 0;
     }
 }
 
