@@ -80,13 +80,21 @@ body {
 }
 .aboutCard_text{
     display: flex;
+    font-size: 18px;
     width: 50%;
     flex-direction: column;
 }
 .aboutCard_image{
     display: flex;
     width: 50%;
+    height: 400px;
     background-color: chartreuse;
+    justify-content: center;
+}
+.aboutCard_image img{
+    height: 100%;
+    border-radius: 30px;
+    object-fit: fill;
 }
 
 .aboutCard{
@@ -380,13 +388,26 @@ body {
         margin: 20px;
         width: 100%;
     }
+    .aboutCard_text{
+        width: 100%;
 
+    }
+    .aboutCard_image{
+        display: none;
+    }
+    .aboutCard_image img{
+        display: none;
+    }
     .isologo_container{
         height: 70px;
     }
     .logotipo_container img{
         height: 40%;
         padding: 0;
+    }
+    .aboutCard{
+        display: flex;
+        flex-direction: column;
     }
 }
 
