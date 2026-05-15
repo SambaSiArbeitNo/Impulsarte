@@ -40,7 +40,7 @@ body {
     padding: 20px;
 }
 
-.card{
+.card_pillar{
     height: auto;
     display: flex;
     flex-direction: column;
@@ -112,9 +112,9 @@ body {
 .aboutCard h3{
     font-weight: 400;
 }
-
+/*
 .seccionDisenio{
-    background-color: #2929be;
+    background-color: white;
     margin: 0;
 }
 .seccionGestion{
@@ -122,9 +122,9 @@ body {
     margin: 0;
 }
 .seccionDesarollo{
-    background-color: #2929be;
+    background-color: white;
     margin: 0;
-}
+}*/
 .h2Services{
     margin: 0;
     padding: 20px;
@@ -153,18 +153,6 @@ body {
     animation: carouselLTR 40s infinite linear;
 }
 
-.serviceCard{
-    flex: 0 0 10em;
-    margin: 15px;
-    height: 100px;
-    padding: 20px;
-    text-align: left;
-    border-radius: 30px;
-    background-color: white;
-    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-    transition: transform .2s ease, box-shadow .2s ease;
-}
-
 @keyframes carouselRTL{
     from {translate: 0%;}
     to {translate: -100%;}
@@ -176,23 +164,36 @@ body {
 
 .serviceCard {
     flex: 0 0 10em;
-    box-sizing: content-box;
     margin: 15px;
     height: 100px;
+}
+
+.serviceCardInner {
+    height: 100%;
     padding: 20px;
     border-radius: 30px;
     background-color: white;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
-    transition: transform .2s ease, box-shadow .2s ease;
+    transition:
+        transform 0.4s ease,
+        background-color 0.4s ease,
+        color 0.4s ease,
+        box-shadow 0.4s ease;
 }
-
+.serviceCard.active .serviceCardInner {
+    transform: scale(1.08);
+    background-color: #E92C93;
+    color: white;
+    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
+}
+/*
 .serviceCard:hover {
     transform: translateY(-10px) scale(1.01);
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
     background-color: #E92C93;
     color: white;
 }
-
+*/
 
 
 .nav_container {
@@ -466,4 +467,75 @@ body {
     display: flex;
     object-fit: contain;
     height: 100%;
+}
+
+.serviceCard_background{
+    background-image: linear-gradient(to right top, rgba(233, 44, 147, 0.75),  rgba(41, 41, 190));
+}
+
+
+
+
+
+
+
+
+
+.carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    padding: 40px 0;
+}
+
+.track {
+    display: flex;
+    gap: 30px;
+    transition: transform 0.8s ease-in-out;
+}
+
+.card {
+    flex: 0 0 220px;
+    height: 140px;
+    border-radius: 24px;
+    background: white;
+    color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
+    transition: all 0.4s ease;
+}
+
+.card.active {
+    transform: scale(1.12);
+    background: #ec4899;
+    color: white;
+    box-shadow: 0 20px 40px rgba(236,72,153,0.45);
+}
+
+/* Fade edges */
+.carousel::before,
+.carousel::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 100px;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.carousel::before {
+    left: 0;
+    background: linear-gradient(to right, #111827, transparent);
+}
+
+.carousel::after {
+    right: 0;
+    background: linear-gradient(to left, #111827, transparent);
 }

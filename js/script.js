@@ -1,109 +1,73 @@
-function showSidebar(){
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.display = 'flex'
-}
-function hideSidebar(){
-    const sidebar = document.querySelector('.sidebar')
-    sidebar.style.display = 'none'
+function showSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'flex';
 }
 
-document.addEventListener("click", e => {
-let handle
-if (e.target.matches(".handle")) {
-    handle = e.target
-} else {
-    handle = e.target.closest(".handle")
-}
-if (handle != null) onHandleClick(handle)
-})
-
-const throttleProgressBar = throttle(() => {
-document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
-}, 250)
-window.addEventListener("resize", throttleProgressBar)
-
-document.querySelectorAll(".progress-bar").forEach(calculateProgressBar)
-
-function calculateProgressBar(progressBar) {
-progressBar.innerHTML = ""
-const slider = progressBar.closest(".row").querySelector(".slider")
-const itemCount = slider.children.length
-const itemsPerScreen = parseInt(
-    getComputedStyle(slider).getPropertyValue("--items-per-screen")
-)
-let sliderIndex = parseInt(
-    getComputedStyle(slider).getPropertyValue("--slider-index")
-)
-const progressBarItemCount = Math.ceil(itemCount / itemsPerScreen)
-
-if (sliderIndex >= progressBarItemCount) {
-    slider.style.setProperty("--slider-index", progressBarItemCount - 1)
-    sliderIndex = progressBarItemCount - 1
+function hideSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.style.display = 'none';
 }
 
-for (let i = 0; i < progressBarItemCount; i++) {
-    const barItem = document.createElement("div")
-    barItem.classList.add("progress-item")
-    if (i === sliderIndex) {
-    barItem.classList.add("active")
-    }
-    progressBar.append(barItem)
-}
-}
+const carousel = document.getElementById('carousel1');
+const track = document.getElementById('track1');
+const cards = Array.from(document.querySelectorAll('.card'));
 
-function onHandleClick(handle) {
-    const progressBar = handle.closest(".row").querySelector(".progress-bar")
-    const slider = handle.closest(".container").querySelector(".slider")
-    const sliderIndex = parseInt(
-    getComputedStyle(slider).getPropertyValue("--slider-index")
-    )
-    const progressBarItemCount = progressBar.children.length
-    if (handle.classList.contains("left-handle")) {
-        if (sliderIndex - 1 < 0) {
-            slider.style.setProperty("--slider-index", progressBarItemCount - 1)
-            progressBar.children[sliderIndex].classList.remove("active")
-            progressBar.children[progressBarItemCount - 1].classList.add("active")
-        } else {
-            slider.style.setProperty("--slider-index", sliderIndex - 1)
-            progressBar.children[sliderIndex].classList.remove("active")
-            progressBar.children[sliderIndex - 1].classList.add("active")
-        }
-    }
+let currentIndex = 0;
 
-    if (handle.classList.contains("right-handle")) {
-        if (sliderIndex + 1 >= progressBarItemCount) {
-            slider.style.setProperty("--slider-index", 0)
-            progressBar.children[sliderIndex].classList.remove("active")
-            progressBar.children[0].classList.add("active")
-        } else {
-            slider.style.setProperty("--slider-index", sliderIndex + 1)
-            progressBar.children[sliderIndex].classList.remove("active")
-            progressBar.children[sliderIndex + 1].classList.add("active")
-        }
-    }
+function updateCarousel() {
+    const carouselWidth = carousel.offsetWidth;
+    const card = cards[currentIndex];
+
+    // Card center relative to track
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+
+    // Move track so selected card is centered
+    const translateX = carouselWidth / 2 - cardCenter;
+
+    track.style.transform = `translateX(${translateX}px)`;
+
+    // Update active class
+    cards.forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
 }
 
-function throttle(cb, delay = 1000) {
-    let shouldWait = false
-    let waitingArgs
-    const timeoutFunc = () => {
-        if (waitingArgs == null) {
-            shouldWait = false
-        } else {
-            cb(...waitingArgs)
-            waitingArgs = null
-            setTimeout(timeoutFunc, delay)
-        }
-    }
+// Initial position
+updateCarousel();
 
-    return (...args) => {
-        if (shouldWait) {
-            waitingArgs = args
-            return
-        }
+// Move every 2 seconds
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel();
+}, 2000);
 
-        cb(...args)
-        shouldWait = true
-        setTimeout(timeoutFunc, delay)
-    }
+const carousel = document.getElementById('carousel2');
+const track = document.getElementById('track2');
+const cards = Array.from(document.querySelectorAll('.card'));
+
+let currentIndex = 0;
+
+function updateCarousel() {
+    const carouselWidth = carousel.offsetWidth;
+    const card = cards[currentIndex];
+
+    // Card center relative to track
+    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+
+    // Move track so selected card is centered
+    const translateX = carouselWidth / 2 - cardCenter;
+
+    track.style.transform = `translateX(${translateX}px)`;
+
+    // Update active class
+    cards.forEach(c => c.classList.remove('active'));
+    card.classList.add('active');
 }
+
+// Initial position
+updateCarousel();
+
+// Move every 2 seconds
+setInterval(() => {
+    currentIndex = (currentIndex + 1) % cards.length;
+    updateCarousel();
+}, 2000);
