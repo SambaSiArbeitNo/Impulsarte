@@ -324,7 +324,7 @@ body {
     color: white;
 }
 .sidebar li{
-    
+    list-style: none;
     height: 100px;
     width: 100%;
 }
