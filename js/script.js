@@ -1,73 +1,52 @@
 function showSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.style.display = 'flex';
+    document.querySelector('.sidebar').style.display = 'flex';
 }
 
 function hideSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.style.display = 'none';
+    document.querySelector('.sidebar').style.display = 'none';
 }
 
-const carousel = document.getElementById('carousel1');
-const track = document.getElementById('track1');
-const cards = Array.from(document.querySelectorAll('.card'));
+document.addEventListener('DOMContentLoaded', () => {
+    const carousels = document.querySelectorAll('.serviceCardContainer');
 
-let currentIndex = 0;
+    function updateActiveCards() {
+        carousels.forEach(carousel => {
+            const cards = carousel.querySelectorAll('.serviceCard');
 
-function updateCarousel() {
-    const carouselWidth = carousel.offsetWidth;
-    const card = cards[currentIndex];
+            const carouselRect = carousel.getBoundingClientRect();
+            const carouselCenter =
+                carouselRect.left + carouselRect.width / 2;
 
-    // Card center relative to track
-    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
+            let closestCard = null;
+            let minDistance = Infinity;
 
-    // Move track so selected card is centered
-    const translateX = carouselWidth / 2 - cardCenter;
+            cards.forEach(card => {
+                const rect = card.getBoundingClientRect();
+                const cardCenter = rect.left + rect.width / 2;
+                const distance = Math.abs(carouselCenter - cardCenter);
 
-    track.style.transform = `translateX(${translateX}px)`;
+                if (distance < minDistance) {
+                    minDistance = distance;
+                    closestCard = card;
+                }
+            });
 
-    // Update active class
-    cards.forEach(c => c.classList.remove('active'));
-    card.classList.add('active');
-}
+            // Only change classes if the active card actually changed
+            const currentActive = carousel.querySelector('.serviceCard.active');
 
-// Initial position
-updateCarousel();
+            if (currentActive !== closestCard) {
+                if (currentActive) {
+                    currentActive.classList.remove('active');
+                }
 
-// Move every 2 seconds
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % cards.length;
-    updateCarousel();
-}, 2000);
+                if (closestCard) {
+                    closestCard.classList.add('active');
+                }
+            }
+        });
 
-const carousel = document.getElementById('carousel2');
-const track = document.getElementById('track2');
-const cards = Array.from(document.querySelectorAll('.card'));
+        requestAnimationFrame(updateActiveCards);
+    }
 
-let currentIndex = 0;
-
-function updateCarousel() {
-    const carouselWidth = carousel.offsetWidth;
-    const card = cards[currentIndex];
-
-    // Card center relative to track
-    const cardCenter = card.offsetLeft + card.offsetWidth / 2;
-
-    // Move track so selected card is centered
-    const translateX = carouselWidth / 2 - cardCenter;
-
-    track.style.transform = `translateX(${translateX}px)`;
-
-    // Update active class
-    cards.forEach(c => c.classList.remove('active'));
-    card.classList.add('active');
-}
-
-// Initial position
-updateCarousel();
-
-// Move every 2 seconds
-setInterval(() => {
-    currentIndex = (currentIndex + 1) % cards.length;
-    updateCarousel();
-}, 2000);
+    updateActiveCards();
+});

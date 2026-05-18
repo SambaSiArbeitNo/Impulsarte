@@ -9,6 +9,19 @@
         <script src="./js/script.js" defer></script>
     </head>
     <body>
+        <ul class="sidebar">
+                    <li class="firstRowSidebar">
+                        <div class="isologo_container">
+                            <img src="./images/impulsarte_isotipo.png">
+                        </div>
+                        <div class="closeButton_container" onclick=hideSidebar()>
+                            <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
+                        </div>
+                    </li>
+                    <li onclick=hideSidebar()><a href="#contact">Contacto</a></li>
+                    <li onclick=hideSidebar()><a href="#about">About</a></li>
+                    <li onclick=hideSidebar()><a href="#services">Servicios</a></li>
+                </ul>
         <div class="main_container">
             <div class="nav_container">
                 <div class="isologo_container">
@@ -23,20 +36,7 @@
                     <li class="menu_button" onclick=showSidebar()><a href="#"><svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e3e3e3"><path d="M120-240v-80h720v80H120Zm0-200v-80h720v80H120Zm0-200v-80h720v80H120Z"/></svg></a></li>
                 </ul>
                 
-                <ul class="sidebar">
-                    
-                    <li class="firstRowSidebar">
-                        <div class="isologo_container">
-                            <img src="./images/impulsarte_isotipo.png">
-                        </div>
-                        <div class="closeButton_container" onclick=hideSidebar()>
-                            <svg xmlns="http://www.w3.org/2000/svg" height="36px" viewBox="0 -960 960 960" width="36px" fill="#e3e3e3"><path d="m256-200-56-56 224-224-224-224 56-56 224 224 224-224 56 56-224 224 224 224-56 56-224-224-224 224Z"/></svg>
-                        </div>
-                    </li>
-                    <li><a href="#contact">Contacto</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#services">Servicios</a></li>
-                </ul>
+                
             </div>
             <div class="hero_container">
                 <h2>IMPULSARTE</h2>
@@ -72,17 +72,20 @@
             <div class="aboutCard">
                 <div class="aboutCard_text">
                 <h2>¿Quiénes somos?</h2>
-                <h3>Somos un Equipo de Asesoría Integral. 
+                <p>Somos un Equipo de Asesoría Integral. 
                 Brindamos soluciones eficientes en administración, gestión y resolución de problemáticas organizacionales. Acompañamos a las organizaciones a afrontar desafíos en distintos contextos y etapas de su crecimiento, sin importar el tamaño de la empresa ni el rubro en el que operen.
                 Nos caracterizamos por actuar con estricta confidencialidad, por el resguardo de las ideas y estrategias de negocio de nuestros clientes.
-                </h3>
+                </p>
                 </div>
-                <div class="aboutCard_image">
-                    <img src="./images/quienessomos.jpg" alt="placeholder">
+                <div class="aboutCard_image hideOnMobile">
+                    <img src="./images/16x9-placeholder.jpg" alt="placeholder">
                 </div>
             </div>
             <div class="aboutCard" >
-                <div class="aboutCard_text">
+                <div class="aboutCard_image hideOnMobile">
+                    <img src="./images/16x9-placeholder.jpg" alt="placeholder">
+                </div>
+                <div class="aboutCard_text right_text">
                     <h2>¿Qué servicios ofrecemos?</h2>
                     <ul>
                         <li>Optimización de Recursos</li>
@@ -93,9 +96,6 @@
                         <li>RRHH: Reclutamiento de Personal y Formaciones  de Equipos</li>
                         <li>Dirección y Producción de Eventos Empresariales</li>
                     </ul>
-                </div>
-                <div class="aboutCard_image">
-                    
                 </div>
             </div>
         </div>
@@ -146,22 +146,22 @@
                             <div class="serviceCard"><div class="serviceCardInner">Diseño e implementación de programas de capacitación para el personal.</div></div>
                     </div>
                     <div aria-hidden class="wrapper carouselRTL">
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
-                            <div class="serviceCard"><div class="serviceCardInner"></div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Gestión y administración de cartera de clientes.</div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Asesoramiento y gestión de habilitaciones comerciales.</div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Análisis y reingeniería de procesos organizacionales.</div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Organización y optimización de espacios de trabajo, archivos y recursos físicos y digitales.</div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Gestión de la comunicación interna y externa de la organización.</div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Implementación y soporte de soluciones tecnológicas e informáticas.</div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Planificación, dirección y producción de eventos corporativos.</div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Optimización y gestión eficiente de recursos organizacionales.</div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Reclutamiento y selección de recursos humanos.</div></div>
+                            <div class="serviceCard"><div class="serviceCardInner">Diseño e implementación de programas de capacitación para el personal.</div></div>
                     </div>
                 </div>
             </div>
             <div class="seccionDesarollo">
                 <h2 class="h2Services">Desarrolo Web</h2>
-                <div class="serviceCardContainer seccionDesarollo">
+                <div class="serviceCardContainer">
                 <div class="wrapper carouselRTL">
                             <div class="serviceCard"><div class="serviceCardInner">Transformación digital y adopción de nuevas tecnologías.</div></div>
                             <div class="serviceCard"><div class="serviceCardInner">Desarrollo web (sitios institucionales, plataformas y aplicaciones web).</div></div>
@@ -216,34 +216,6 @@
                     <img src="./images/impulsarte_isotipo_rosa.png" alt="isotipo_rosa">
                 </div>
             </div>
-        </div>
-        <div class="carousel" id="carousel1">
-            <div class="track" id="track1">
-                <div class="card">Gestión y administración de cartera de clientes.</div>
-                <div class="card">Asesoramiento y gestión de habilitaciones comerciales.</div>
-                <div class="card">Análisis y reingeniería de procesos organizacionales.</div>
-                <div class="card">Organización y optimización de espacios de trabajo, archivos y recursos físicos y digitales.</div>
-                <div class="card">Gestión de la comunicación interna y externa de la organización.</div>
-                <div class="card">Implementación y soporte de soluciones tecnológicas e informáticas.</div>
-                <div class="card">Planificación, dirección y producción de eventos corporativos.</div>
-                <div class="card">Optimización y gestión eficiente de recursos organizacionales.</div>
-                <div class="card">Reclutamiento y selección de recursos humanos.</div>
-                <div class="card">Diseño e implementación de programas de capacitación para el personal.</div>
-            </div>
-        <div class="carousel" id="carousel2">
-            <div class="track" id="track2">
-                <div class="card">Transformación digital y adopción de nuevas tecnologías.</div>
-                <div class="card">Desarrollo web (sitios institucionales, plataformas y aplicaciones web).</div>
-                <div class="card">Gestión y administración de redes sociales.</div>
-                <div class="card">Planificación de métodos y herramientas de pago para comercios.</div>
-                <div class="card">Estrategias digitales y posicionamiento en redes sociales.</div>
-                <div class="card">Desarrollo de sistemas de gestión a medida para organizaciones.</div>
-                <div class="card">Automatización de procesos administrativos y operativos.</div>
-                <div class="card">Integración de plataformas y sistemas digitales (ERP, CRM, e-commerce, etc.).</div>
-                <div class="card">Análisis de datos y generación de reportes para la toma de decisiones.</div>
-                <div class="card">Implementación y mantenimiento de soluciones tecnológicas y soporte técnico.</div>
-            </div>
-        </div>
         </div>
     </body>
 </html>

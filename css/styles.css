@@ -59,7 +59,6 @@ body {
     user-select: none;
 }
 
-
 .card_icon{
     width: 100px;
     height: 100px;
@@ -76,23 +75,37 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
     background-color: white;
 }
 .aboutCard_text{
     display: flex;
-    font-size: 18px;
+    font-size: 1.3em;
+    padding: 20px;
     width: 50%;
     flex-direction: column;
 }
+.right_text{
+    text-align: right;
+    font-weight: 400
+}
+.right_text ul{
+    direction: rtl;
+}
+
 .aboutCard_image{
     display: flex;
     width: 50%;
+    height: 100%;
     height: 400px;
-    background-color: chartreuse;
+    background-color: transparent;
     justify-content: center;
 }
 .aboutCard_image img{
+    aspect-ratio: 16/9;
     height: 100%;
+    width: 100%;
+    padding: 10px;
     border-radius: 30px;
     object-fit: fill;
 }
@@ -104,27 +117,16 @@ body {
     flex: 0;
     height: 400px;
     padding: 1rem;
-    width: 100%;
+    width: 90%;
     background-color: rgba(0, 0, 0, 0.25);
     border-radius: 30px;
     box-shadow: 0 12px 28px rgba(0, 0, 0, 0.25);
+    align-items: center;
 }
 .aboutCard h3{
     font-weight: 400;
 }
-/*
-.seccionDisenio{
-    background-color: white;
-    margin: 0;
-}
-.seccionGestion{
-    background-color: white;
-    margin: 0;
-}
-.seccionDesarollo{
-    background-color: white;
-    margin: 0;
-}*/
+
 .h2Services{
     margin: 0;
     padding: 20px;
@@ -132,8 +134,10 @@ body {
 }
 .serviceCardContainer {
     display: flex;
-    overflow-x: auto;
-    height: 200px;
+    overflow: hidden;
+    height: 250px;
+    position: relative;
+    
 }
 .serviceCardContainer:hover .wrapper{
     animation-play-state: paused;
@@ -141,31 +145,30 @@ body {
 .serviceCardContainer::-webkit-scrollbar {
     display: none;
 }
-.wrapper{
+.wrapper {
     display: flex;
-    flex-direction: row;
+    flex-shrink: 0;
 }
 
-.carouselRTL{
-    animation: carouselRTL 40s infinite linear;
-}
-.carouselLTR{
-    animation: carouselLTR 40s infinite linear;
+.carouselRTL {
+    animation: carouselRTL 60s linear infinite;
+    will-change: transform;
 }
 
-@keyframes carouselRTL{
-    from {translate: 0%;}
-    to {translate: -100%;}
-}
-@keyframes carouselLTR{
-    from {translate: 0%;}
-    to {translate: 100%;}
+@keyframes carouselRTL {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 .serviceCard {
-    flex: 0 0 10em;
+    flex: 0 0 180px;
     margin: 15px;
-    height: 100px;
+    height: 180px;
+    transition: transform 0.4s ease;
 }
 
 .serviceCardInner {
@@ -186,15 +189,6 @@ body {
     color: white;
     box-shadow: 0 22px 48px rgba(0, 0, 0, 0.35);
 }
-/*
-.serviceCard:hover {
-    transform: translateY(-10px) scale(1.01);
-    box-shadow: 0 22px 48px rgba(0, 0, 0, 0.32);
-    background-color: #E92C93;
-    color: white;
-}
-*/
-
 
 .nav_container {
     display: flex;
@@ -297,21 +291,45 @@ body {
 .sidebar{
     width: 300px;
     position: fixed;
+    margin: 0;
+    top: 0;
     bottom: 0;
     right: 0;
     height: 100vh;
     z-index: 999;
     padding: 0 0 0 0;
     box-shadow: -10px 0 10px rgba(0, 0, 0, 0.1);
-    background-color: rgba(0, 0, 0, 0.25);
-    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.10);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    border-left: 1px solid rgba(255, 255, 255, 0.3);
     display: none;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
+    border-left: 1px solid rgba(255,255,255,0.2);
+}
+.sidebar ul{
+    height: 100%;
+    margin: 0;
+    list-style: none;
+}
+
+.sidebar a{
+    height: 100%;
+    padding: 0 30px;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    color: white;
 }
 .sidebar li{
+    
+    height: 100px;
     width: 100%;
+}
+.sidebar a:hover{
+    background-color: rgba(0,0,0,0.50)
 }
 .menu_button{
     display: none;
@@ -324,7 +342,9 @@ body {
     .menu_button{
         display: block;
     }
-    
+    .aboutCard_text{
+        width: 100%;
+    }
 }
 
 @media(max-width: 600px){
@@ -338,7 +358,7 @@ body {
         flex-direction: column;
         align-items: center;
     }
-    .card{
+    .card_pillar{
         width: 100%;
         margin-bottom: 20px;
         flex-direction: row;
@@ -348,7 +368,7 @@ body {
     .card_icon{
         align-self: flex-start;
     }
-    .card h2{
+    .card_pillar h2{
         padding: 0 0 0 20px;
         width: 80%;
         width: auto;
@@ -360,7 +380,6 @@ body {
     }
     .aboutCard_text{
         width: 100%;
-
     }
     .aboutCard_image{
         display: none;
@@ -368,9 +387,7 @@ body {
     .aboutCard_image img{
         display: none;
     }
-    .isologo_container{
-        height: 70px;
-    }
+    
     .logotipo_container img{
         height: 40%;
         padding: 0;
@@ -470,57 +487,20 @@ body {
 }
 
 .serviceCard_background{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     background-image: linear-gradient(to right top, rgba(233, 44, 147, 0.75),  rgba(41, 41, 190));
 }
 
 
-
-
-
-
-
-
-
-.carousel {
-    width: 100%;
-    overflow: hidden;
-    position: relative;
-    padding: 40px 0;
-}
-
-.track {
-    display: flex;
-    gap: 30px;
-    transition: transform 0.8s ease-in-out;
-}
-
-.card {
-    flex: 0 0 220px;
-    height: 140px;
-    border-radius: 24px;
-    background: white;
-    color: #111;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    padding: 20px;
-    font-size: 1.2rem;
-    font-weight: bold;
-    box-shadow: 0 12px 30px rgba(0,0,0,0.25);
-    transition: all 0.4s ease;
-}
-
-.card.active {
-    transform: scale(1.12);
-    background: #ec4899;
-    color: white;
-    box-shadow: 0 20px 40px rgba(236,72,153,0.45);
-}
-
 /* Fade edges */
-.carousel::before,
-.carousel::after {
+.seccionDisenio::before,
+.seccionDisenio::after,
+.seccionGestion::before,
+.seccionGestion::after,
+.seccionDesarollo::before,
+.seccionDesarollo::after {
     content: "";
     position: absolute;
     top: 0;
@@ -530,12 +510,34 @@ body {
     pointer-events: none;
 }
 
-.carousel::before {
+.seccionDisenio::before,
+.seccionGestion::before,
+.seccionDesarollo::before {
     left: 0;
-    background: linear-gradient(to right, #111827, transparent);
+    z-index: 999;
+    background: linear-gradient(to right, rgb(255,255,255,0.4), transparent);
+    border-radius: 30px 0 0 30px;
 }
 
-.carousel::after {
+.seccionDisenio::after,
+.seccionGestion::after,
+.seccionDesarollo::after {
     right: 0;
-    background: linear-gradient(to left, #111827, transparent);
+    z-index: 999;
+    background: linear-gradient(to left, rgb(255,255,255,0.4), transparent);
+    border-radius: 0 30px 30px 0;
+}
+
+.seccionDisenio,
+.seccionGestion,
+.seccionDesarollo {
+    width: 90%;
+    background-color: rgba(255, 255, 255, 0.30);
+    border-radius: 30px;
+    backdrop-filter: blur(3px);
+    margin-bottom: 20px;
+}
+
+.seccionDisenio{
+    margin-top: 20px;
 }
