@@ -7,7 +7,7 @@ body {
     width: 100%;
     margin: 0;
     padding: 0;
-    background-image: url(../images/fondo_body.jpg);
+    background-image: url(/images/fondo_body.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -23,6 +23,9 @@ body {
     color: white;
     text-align: center;
     user-select: none;
+}
+.hero_container h3{
+    width: 95%;
 }
 .main_container{
     display: flex;
@@ -84,6 +87,7 @@ body {
     padding: 20px;
     width: 50%;
     flex-direction: column;
+    line-height: 1.5;
 }
 .right_text{
     text-align: right;
@@ -376,7 +380,7 @@ body {
     }
     .aboutCard{
         margin: 20px;
-        width: 100%;
+        width: 90%;
     }
     .aboutCard_text{
         width: 100%;
@@ -395,6 +399,9 @@ body {
     .aboutCard{
         display: flex;
         flex-direction: column;
+    }
+    .about_container {
+        width: 100;
     }
 }
 
@@ -427,7 +434,8 @@ body {
     flex-grow: 1;
     height: 150px;
     width: 100%;
-    background-color: rgba(233, 44, 147, 1);
+    background-color: rgba(233, 44, 147, 0.75);
+    backdrop-filter: blur(5px);
     color: white;
 }
 
